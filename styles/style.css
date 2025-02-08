@@ -1,0 +1,209 @@
+html {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255,255,255);
+}
+
+:root {
+    --theme-color: rgb(0, 117, 255);
+    --button-background: #bdbdbd;
+}
+
+main {
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container--column {
+    flex-direction: column;
+}
+
+.container-width--500 {
+    width: 80vw;
+    max-width: 500px;
+    min-width: 250px;
+}
+.container-width--600 {
+    width: 80vw;
+    max-width: 600px;
+    min-width: 250px;
+}
+
+header {
+    color: var(--theme-color);
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--theme-color);
+    box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+}
+
+
+header > h1 {
+    margin: 0 auto 10px auto;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+button {
+    height: 1.7rem;
+    font-size: 1rem;
+    border: 1px solid var(--theme-color);
+    color: var(--theme-color);
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+@media (hover: hover) {
+    button:hover {
+        cursor: pointer;
+        color: white;
+        background-color: var(--theme-color);
+    }
+}
+
+
+.slider-container {
+    margin: 16px 0 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type="range"] {
+    height: 25px;
+}
+
+#clear {
+    margin-left: auto;
+}
+
+.slider-container > label {
+    font-size: 0.9rem;
+}
+
+input[type="color"]{
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    border: none;
+    outline: none;
+    padding: 0;
+    -webkit-appearance: none;
+    margin-left: 5px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;	
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 100%;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border: none;
+    border-radius: 100%;
+}
+
+.toggle-container {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.toggle-container__element > p {
+    margin: 0px 0 0px 16px;
+    font-size: 0.9rem;
+}
+
+.toggle-container__element {
+   width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+ .toggle-container__element > label {
+    font-size: 0.9rem;
+    margin: 4px 0 4px 16px;
+ }
+
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--button-background);;
+    transition: .4s;
+    border-radius: 5px;
+}
+
+.toggle-switch:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 5px;
+}
+
+input:checked + .toggle-switch{
+    background-color: var(--theme-color);
+}
+  
+input:focus + .toggle-switch {
+    box-shadow: 0 0 1px var(--theme-color);
+}
+  
+input:checked + .toggle-switch:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+#sketch-container {
+    margin: auto;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 5px;
+    box-sizing:content-box;
+    height: 80vw;
+    max-height: 600px;
+    min-height: 250px;
+    line-height: 0;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    cursor: url("../images/pencil.svg"), auto;
+}
+
+
+
+.sketch-container__div {
+    border: none;
+    transition: all .2s ease;
+}

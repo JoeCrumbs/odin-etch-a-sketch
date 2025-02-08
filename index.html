@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <title>Etch a Sketch</title>
+</head>
+
+<body>
+    <header class="flex-container">
+        <h1>
+            Etch a Sketch
+            <svg width="25" height="25" fill="rgb(0, 117, 255)" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M888 1184l116-116-152-152-116 116v56h96v96h56zm440-720q-16-16-33 1l-350 350q-17 17-1 33t33-1l350-350q17-17 1-33zm80 594v190q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q63 0 117 25 15 7 18 23 3 17-9 29l-49 49q-14 14-32 8-23-6-45-6h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-126q0-13 9-22l64-64q15-15 35-7t20 29zm-96-738l288 288-672 672h-288v-288zm444 132l-92 92-288-288 92-92q28-28 68-28t68 28l152 152q28 28 28 68t-28 68z"/></svg>
+
+        </h1>
+    </header>
+    <main class ="flex-container flex-container--column">
+        <div class ="flex-container flex-container--column container-width--500">
+            <div class="toggle-container flex-container">
+                <div class="toggle-container__element">
+                    <label class="toggle" for="color">
+                        <input id="color" type="radio" name="draw-setting" checked></input>
+                        <span class="toggle-switch"></span>
+                    </label>
+                    <label for="colorpicker">Color:</label>
+                    <input type="color" id="colorpicker" value="rgb(0,0,0)">
+                </div>
+                <div class="toggle-container__element">
+                    <label class="toggle" for="eraser">
+                        <input id="eraser" type="radio" name="draw-setting"></input>
+                        <span class="toggle-switch"></span>
+                    </label>
+                    <p>Eraser</p>
+                </div>
+                <div class="toggle-container__element">
+                    <label class="toggle" for="rgb">
+                        <input id="rgb" type="radio" name="draw-setting"></input>
+                        <span class="toggle-switch"></span>
+                    </label>
+                    <p>Random RGB colors</p>
+                </div>
+                <div class="toggle-container__element">
+                    <label class="toggle" for="shade">
+                        <input id="shade" type="radio" name="draw-setting"></input>
+                        <span class="toggle-switch"></span>
+                    </label>
+                    <p>Darken 10%</p>
+                </div>
+            </div>
+            
+            <div class="slider-container">
+                <label for="column-number">Grid-Size: <span id="gridsize">50 x 50</span></label>
+
+                <input type="range" min="5" max="100" value="50" class="container-width--500" id="column-number" name="column-number">
+                <button id="clear">Resize</button>
+            </div>
+        </div>
+       <div id="sketch-container" class="container-width--600"></div>
+    </main>
+    <script src="sketch.js"></script>
+</body>
+</html>
